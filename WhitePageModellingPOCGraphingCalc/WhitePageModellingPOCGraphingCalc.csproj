@@ -122,12 +122,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MainWindow.cs" />
+    <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Tests\MainWindowShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelper.cs" />
+    <Compile Include="Models\TwoDeeGraphModel.cs" />
+    <Compile Include="Models\ThreeDeeParametricGraphModel.cs" />
+    <Compile Include="Models\TwoDeeParametricGraphModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
