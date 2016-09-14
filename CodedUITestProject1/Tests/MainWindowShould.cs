@@ -1,10 +1,12 @@
 ﻿using System.IO;
+using CodedUIPageModellingPOCGraphingCalc.Models;
+using Microsoft.VisualStudio.TestTools.UITesting;
+using Microsoft.VisualStudio.TestTools.UITesting.WpfControls;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
-using TestStack.White;
-using TestStack.White.UIItems.WindowItems;
-using WhitePageModellingPOCGraphingCalc.Models;
+using Assert = NUnit.Framework.Assert;
 
-namespace WhitePageModellingPOCGraphingCalc.Tests
+namespace CodedUIPageModellingPOCGraphingCalc.Tests
 {
     [TestFixture]
     public class MainWindowShould
@@ -14,22 +16,24 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
         private static string projectName = "GraphingCalculatorForWhitePOC";  //YOUR PROJECT NAME HERE
         string solutionPath = cwd.Replace(projectName + "\\bin\\Debug", "");
         private static readonly string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-        private static Window AppWindow;
-        private Application app;
+        private static WpfWindow AppWindow;
+        private ApplicationUnderTest app;
         private MainWindowModel _mainWindow;
 
         [SetUp]
         public void LaunchApp()
         {
-            app = Application.Launch(LocalPathToTestApp + "GraphingCalculatorForWhitePOC.exe");
-            AppWindow= app.GetWindow("MainWindow");
+            app = ApplicationUnderTest.Launch(LocalPathToTestApp + "GraphingCalculatorForWhitePOC.exe");
+            var appWindow = new WpfWindow();
+            appWindow.SearchProperties[WpfControl.PropertyNames.AutomationId] = "UIMainWindow";
+            
             _mainWindow = new MainWindowModel(AppWindow);
         }
 
-        [Test]
+        [TestMethod]
         public void Appear()
         {
-            Assert.That(_mainWindow.ParentWindow.Visible);
+            Assert.IsTrue(_mainWindow.ParentWindow.Enabled);
         }
         [Test]
         public void ShowSin()
@@ -68,7 +72,7 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
         [TearDown]
         public void TearDown()
         {
-            AppWindow.Close();
+            app.Close();
         }
     }
 }
