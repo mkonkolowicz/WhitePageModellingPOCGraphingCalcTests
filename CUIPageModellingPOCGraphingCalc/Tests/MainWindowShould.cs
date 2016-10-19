@@ -12,10 +12,6 @@ namespace CUIPageModellingPOCGraphingCalc.Tests
     [CodedUITest]
     public class MainWindowShould
     {
-        public MainWindowShould()
-        {
-        }
-
         private const string LocalPathToTestApp = "C:\\Github\\WhitePageModellingPOCGraphingCalcTests\\GraphingCalculatorDemo\\bin\\Debug\\";
         private static string cwd = System.Reflection.Assembly.GetExecutingAssembly().Location;
         private static string projectName = "GraphingCalculatorForWhitePOC";  //YOUR PROJECT NAME HERE
@@ -79,43 +75,5 @@ namespace CUIPageModellingPOCGraphingCalc.Tests
         {
             app.Close();
         }
-
-
-        #region Additional test attributes
-
-        // You can use the following additional attributes as you write your tests:
-
-        ////Use TestInitialize to run code before running each test 
-        //[TestInitialize()]
-        //public void MyTestInitialize()
-        //{        
-        //    // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
-        //}
-
-        ////Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{        
-        //    // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
-        //}
-
-        #endregion
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-        private TestContext testContextInstance;
     }
 }
