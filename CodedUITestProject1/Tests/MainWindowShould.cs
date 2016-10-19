@@ -2,7 +2,6 @@
 using CodedUIPageModellingPOCGraphingCalc.Models;
 using Microsoft.VisualStudio.TestTools.UITesting;
 using Microsoft.VisualStudio.TestTools.UITesting.WpfControls;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
@@ -30,7 +29,7 @@ namespace CodedUIPageModellingPOCGraphingCalc.Tests
             _mainWindow = new MainWindowModel(AppWindow);
         }
 
-        [TestMethod]
+        [Test]
         public void Appear()
         {
             Assert.IsTrue(_mainWindow.ParentWindow.Enabled);

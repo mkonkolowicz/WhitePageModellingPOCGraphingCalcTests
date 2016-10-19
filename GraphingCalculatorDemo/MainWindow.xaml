@@ -280,13 +280,13 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Row="0" Grid.Column="0" Name="xMinLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="0" Grid.Column="1" Name="xMin" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="0" Grid.Column="1" Name="xMin" MaxLines="1" AutomationProperties.AutomationId="UIXmin"/>
                         <TextBlock Grid.Row="1" Grid.Column="0" Name="xMaxLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="1" Grid.Column="1" Name="xMax" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="1" Grid.Column="1" Name="xMax" MaxLines="1" AutomationProperties.AutomationId="UIXmax" />
                         <TextBlock Grid.Row="2" Grid.Column="0" Name="yMinLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="2" Grid.Column="1" Name="yMin" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="2" Grid.Column="1" Name="yMin" MaxLines="1" AutomationProperties.AutomationId="UIYmin"/>
                         <TextBlock Grid.Row="3" Grid.Column="0" Name="yMaxLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="3" Grid.Column="1" Name="yMax" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="3" Grid.Column="1" Name="yMax" MaxLines="1" AutomationProperties.AutomationId="UIYmax"/>
                         <Grid Grid.Row="4">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -333,19 +333,19 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Row="0" Grid.Column="0" Name="xMin2DLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="0" Grid.Column="1" Name="xMin2D" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="0" Grid.Column="1" Name="xMin2D" MaxLines="1" AutomationProperties.AutomationId="UIXmin2D"/>
                         <TextBlock Grid.Row="1" Grid.Column="0" Name="xMax2DLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="1" Grid.Column="1" Name="xMax2D" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="1" Grid.Column="1" Name="xMax2D" MaxLines="1" AutomationProperties.AutomationId="UIXmax2D"/>
                         <TextBlock Grid.Row="2" Grid.Column="0" Name="yMin2DLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="2" Grid.Column="1" Name="yMin2D" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="2" Grid.Column="1" Name="yMin2D" MaxLines="1" AutomationProperties.AutomationId="UIYmin2D"/>
                         <TextBlock Grid.Row="3" Grid.Column="0" Name="yMax2DLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="3" Grid.Column="1" Name="yMax2D" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="3" Grid.Column="1" Name="yMax2D" MaxLines="1" AutomationProperties.AutomationId="UIXmax2D"/>
                         <TextBlock Grid.Row="4" Grid.Column="0" Name="tMin2DLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="4" Grid.Column="1" Name="tMin2D" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="4" Grid.Column="1" Name="tMin2D" MaxLines="1" AutomationProperties.AutomationId="UITmin2D"/>
                         <TextBlock Grid.Row="5" Grid.Column="0" Name="tMax2DLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="5" Grid.Column="1" Name="tMax2D" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="5" Grid.Column="1" Name="tMax2D" MaxLines="1" AutomationProperties.AutomationId="UITmax2D"/>
                         <TextBlock Grid.Row="6" Grid.Column="0" Name="tStep2DLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="6" Grid.Column="1" Name="tStep2D" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="6" Grid.Column="1" Name="tStep2D" MaxLines="1" AutomationProperties.AutomationId="UITStep2D"/>
                         <Grid Grid.Row="7">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -356,8 +356,8 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Button Click="SaveOptions2D" Content="Save" />
-                            <Button Click="ResetOptions2D" Grid.Column="1" Content="Reset" />
+                            <Button Click="SaveOptions2D" Content="Save" AutomationProperties.AutomationId="UISaveOptions2D"/>
+                            <Button Click="ResetOptions2D" Grid.Column="1" Content="Reset" AutomationProperties.AutomationId="UISaveOptions2D"/>
                         </Grid>
                     </Grid>
                     <Grid Name="options3D" Grid.Row="1" Visibility="Collapsed">
@@ -391,17 +391,17 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Row="0" Grid.Column="0" Name="uMinLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="0" Grid.Column="1" Name="uMin" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="0" Grid.Column="1" Name="uMin" MaxLines="1" AutomationProperties.AutomationId="UIuMin"/>
                         <TextBlock Grid.Row="1" Grid.Column="0" Name="uMaxLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="1" Grid.Column="1" Name="uMax" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="1" Grid.Column="1" Name="uMax" MaxLines="1" AutomationProperties.AutomationId="UIuMax"/>
                         <TextBlock Grid.Row="2" Grid.Column="0" Name="uGridLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="2" Grid.Column="1" Name="uGrid" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="2" Grid.Column="1" Name="uGrid" MaxLines="1" AutomationProperties.AutomationId="UIuGrid"/>
                         <TextBlock Grid.Row="3" Grid.Column="0" Name="vMinLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="3" Grid.Column="1" Name="vMin" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="3" Grid.Column="1" Name="vMin" MaxLines="1" AutomationProperties.AutomationId="UIvMin"/>
                         <TextBlock Grid.Row="4" Grid.Column="0" Name="vMaxLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="4" Grid.Column="1" Name="vMax" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="4" Grid.Column="1" Name="vMax" MaxLines="1" AutomationProperties.AutomationId="UIvMax"/>
                         <TextBlock Grid.Row="5" Grid.Column="0" Name="vGridLabel" />
-                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="5" Grid.Column="1" Name="vGrid" MaxLines="1" />
+                        <TextBox GotFocus="OnTextBoxGotFocus" Grid.Row="5" Grid.Column="1" Name="vGrid" MaxLines="1" AutomationProperties.AutomationId="UIuGridSections"/>
                         <Grid Grid.Row="6">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -412,8 +412,8 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Button Click="SaveOptions3D" Content="Save" />
-                            <Button Click="ResetOptions3D" Grid.Column="1" Content="Reset" />
+                            <Button Click="SaveOptions3D" Content="Save" AutomationProperties.AutomationId="UISaveOptions3d"/>
+                            <Button Click="ResetOptions3D" Grid.Column="1" Content="Reset" AutomationProperties.AutomationId="UISaveOptions3d"/>
                         </Grid>
                     </Grid>
 
