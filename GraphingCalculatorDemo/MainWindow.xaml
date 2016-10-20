@@ -58,7 +58,7 @@
             <Border Grid.ColumnSpan="3" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1.5">
                 <Grid Name="screen" Background="#ffeeeeee" ClipToBounds="True" MouseLeftButtonDown="OnCanvasClickStart"
                       MouseLeftButtonUp="OnCanvasClickFinish" MouseMove="OnCanvasMouseMove"
-                      MouseRightButtonDown="OnCanvasRightClick">
+                      MouseRightButtonDown="OnCanvasRightClick" AutomationProperties.AutomationId="UIGraphedScreen">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
@@ -70,7 +70,7 @@
                              VerticalScrollBarVisibility="Visible" AutomationProperties.AutomationId="UICalculationResults"/>
                     <Grid Grid.Row="1">
                         <!-- The purpose of the parent grid is to stretch the canvas -->
-                        <Canvas Name="screenCanvas" Visibility="Collapsed" ClipToBounds="True" />
+                        <Canvas Name="screenCanvas" Visibility="Collapsed" ClipToBounds="True"/>
                     </Grid>
                     <Rectangle Name="selection" Grid.Row="1" Visibility="Collapsed" Stroke="Black" Fill="#00000000"
                                StrokeDashOffset="5" StrokeThickness=".99" HorizontalAlignment="Left"

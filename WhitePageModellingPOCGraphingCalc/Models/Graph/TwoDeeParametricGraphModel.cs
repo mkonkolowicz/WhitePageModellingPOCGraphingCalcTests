@@ -1,4 +1,7 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestStack.White.UIItems;
+using TestStack.White.UIItems.Finders;
+using TestStack.White.UIItems.TableItems;
 using TestStack.White.UIItems.WindowItems;
 
 namespace WhitePageModellingPOCGraphingCalc.Models
@@ -10,19 +13,26 @@ namespace WhitePageModellingPOCGraphingCalc.Models
         }
 
         #region Private Properties
-        private TextBox FunctionInput => ParentWindow.Get<TextBox>("UIY");
-        private Button GraphIt2D => ParentWindow.Get<Button>("UIGraphIt!");
+        private TextBox FofX => ParentWindow.Get<TextBox>("UIXt2dParametric");
+        private TextBox FofY => ParentWindow.Get<TextBox>("UIYt2dParametric");
+        private Button Spiral => ParentWindow.Get<Button>("UISpiral");
+        private Button Ellipse => ParentWindow.Get<Button>("UIEllipse");
+        private Button GraphIt => ParentWindow.Get<Button>("UIGraphIt!2DParametric");
         #endregion
-
+        
+        #region Public Properties
+        public bool SpiralEnabled => Spiral.Enabled;
+        public bool FofXAreaEnabled => FofX.Enabled;
+        public bool FofYAreaEnabled => FofY.Enabled;
+        public bool EllipseEnabled => Ellipse.Enabled;
+        public bool GraphitButtonEnabled => GraphIt.Enabled;
+        #endregion
+        
         #region Public Methods
-        public bool InputAreaEnabled()
+        public TwoDeeParametricGraphModel GraphTheResult()
         {
-            return FunctionInput.Enabled;
-        }
-
-        public bool GraphItButtonEnabled()
-        {
-            return GraphIt2D.Enabled;
+            GraphIt.Click();
+            return this;
         }
         #endregion
 
