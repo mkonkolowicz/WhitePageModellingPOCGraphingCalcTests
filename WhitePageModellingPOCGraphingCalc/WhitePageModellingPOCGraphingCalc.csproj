@@ -122,7 +122,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Models\GraphOptions\ThreeDeeParametricGraphModel.cs" />
     <Compile Include="Models\MainWindowModel.cs" />
+    <Compile Include="Tests\3DGraphOptionsShould.cs" />
     <Compile Include="Tests\2DGraphShould.cs" />
     <Compile Include="Tests\MainWindowShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,9 +136,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\GraphOptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

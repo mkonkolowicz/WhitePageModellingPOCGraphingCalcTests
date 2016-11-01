@@ -1,7 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.TableItems;
 using TestStack.White.UIItems.WindowItems;
 
 namespace WhitePageModellingPOCGraphingCalc.Models
@@ -21,7 +18,7 @@ namespace WhitePageModellingPOCGraphingCalc.Models
         #endregion
         
         #region Public Properties
-        public bool SpiralEnabled => Spiral.Enabled;
+        public bool SpiralVisible => Spiral.Visible;
         public bool FofXAreaEnabled => FofX.Enabled;
         public bool FofYAreaEnabled => FofY.Enabled;
         public bool EllipseEnabled => Ellipse.Enabled;

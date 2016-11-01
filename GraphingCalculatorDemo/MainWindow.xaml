@@ -413,7 +413,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Button Click="SaveOptions3D" Content="Save" AutomationProperties.AutomationId="UISaveOptions3d"/>
-                            <Button Click="ResetOptions3D" Grid.Column="1" Content="Reset" AutomationProperties.AutomationId="UISaveOptions3d"/>
+                            <Button Click="ResetOptions3D" Grid.Column="1" Content="Reset" AutomationProperties.AutomationId="UIResetOptions3d"/>
                         </Grid>
                     </Grid>
 

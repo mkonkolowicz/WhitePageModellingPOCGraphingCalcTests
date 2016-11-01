@@ -14,6 +14,7 @@ namespace WhitePageModellingPOCGraphingCalc.Models
         private Button Sin => ParentWindow.Get<Button>("UISin");
         private Button Cos => ParentWindow.Get<Button>("UICos");
         private Menu GraphMenu => ParentWindow.Get<Menu>("UIGraphMenu");
+        private Menu GraphOptionsMenu => ParentWindow.Get<Menu>("UIGraphOptions");
         private TextBox MainCalculatorInputArea => ParentWindow.Get<TextBox>("UICalculationResults");
         #endregion
         
@@ -49,6 +50,11 @@ namespace WhitePageModellingPOCGraphingCalc.Models
         {
             GraphMenu.ChildMenus.Find(x => x.Id == "UIGraph3D").Click();
             return new ThreeDeeParametricGraphModel(ParentWindow);
+        }
+        public ThreeDeeParametricGraphOptionsModel Open3DParametricGraphOptionsMenu()
+        {
+            GraphOptionsMenu.ChildMenus.Find(x => x.Id == "UIShowOptions3D").Click();
+            return new ThreeDeeParametricGraphOptionsModel(ParentWindow);
         }
         #endregion
 

@@ -7,11 +7,11 @@ using WhitePageModellingPOCGraphingCalc.Models;
 namespace WhitePageModellingPOCGraphingCalc.Tests
 {
     [TestFixture]
-    public class TwoDeeParametricGraphShould
+    public class ThreeDeeParametricGraphOptionsShould
     {
         private const string LocalPathToTestApp = "C:\\Github\\WhitePageModellingPOCGraphingCalcTests\\GraphingCalculatorDemo\\bin\\Debug\\";
         private static string cwd = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        private static string projectName = "GraphingCalculatorForWhitePOC";  //YOUR PROJECT NAME HERE
+        private static string projectName = "GraphingCalculatorForWhitePOC"; 
         string solutionPath = cwd.Replace(projectName + "\\bin\\Debug", "");
         private static readonly string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
         private static Window AppWindow;
@@ -29,37 +29,43 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
         [Test]
         public void AppearWhenNavigatedTo()
         {
-            Assert.That(_mainWindow.Open2DParametricGraphMenu().ParentWindow.Enabled);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().ParentWindow.Enabled);
         }
 
         [Test]
-        public void HaveFofXAvailableForInput()
+        public void HaveUMinAvailableForInput()
         {
-            Assert.That(_mainWindow.Open2DParametricGraphMenu().FofXAreaEnabled);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().uMinAccessible);
         }
 
         [Test]
-        public void HaveFofYAvailableForInput()
+        public void HaveUMaxAvailableForInput()
         {
-            Assert.That(_mainWindow.Open2DParametricGraphMenu().FofYAreaEnabled);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().uMaxAccessible);
         }
 
         [Test]
-        public void HaveSpiralAvailableForAction()
+        public void HaveUGridSectionsAvailableForInput()
         {
-            Assert.That(_mainWindow.Open2DParametricGraphMenu().SpiralVisible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().uGridSectionsAccessible);
         }
 
         [Test]
-        public void HaveEllipseAvailableForAction()
+        public void HaveVMinAvailableForInput()
         {
-            Assert.That(_mainWindow.Open2DParametricGraphMenu().SpiralVisible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().vMinAccessible);
         }
 
         [Test]
-        public void NotShowSpiralAfterClickingGraphIt()
+        public void HaveVMaxAvailableForInput()
         {
-            Assert.That(!(_mainWindow.Open2DParametricGraphMenu().GraphTheResult().SpiralVisible));
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().vMaxAccessible);
+        }
+
+        [Test]
+        public void HaveVGridSectionsAvailableForInput()
+        {
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().vGridSectionsAccessible);
         }
 
         [TearDown]
