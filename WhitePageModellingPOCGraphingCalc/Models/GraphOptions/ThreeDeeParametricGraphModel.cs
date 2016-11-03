@@ -1,7 +1,8 @@
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
+using WhitePageModellingPOCGraphingCalc.Models.Graph;
 
-namespace WhitePageModellingPOCGraphingCalc.Models
+namespace WhitePageModellingPOCGraphingCalc.Models.GraphOptions
 {
     public class ThreeDeeParametricGraphOptionsModel : TestHelper
     {
@@ -10,26 +11,26 @@ namespace WhitePageModellingPOCGraphingCalc.Models
         }
 
         #region Private Properties
-        private TextBox uMin => ParentWindow.Get<TextBox>("UIuMin");
-        private TextBox uMax => ParentWindow.Get<TextBox>("UIuMax");
-        private TextBox uGridSections => ParentWindow.Get<TextBox>("UIuGrid");
-        private TextBox vMin => ParentWindow.Get<TextBox>("UIvMin");
-        private TextBox vMax => ParentWindow.Get<TextBox>("UIvMax");
-        private TextBox vGridSections => ParentWindow.Get<TextBox>("UIuGridSections");
+        private TextBox UMin => ParentWindow.Get<TextBox>("UIuMin");
+        private TextBox UMax => ParentWindow.Get<TextBox>("UIuMax");
+        private TextBox UGridSections => ParentWindow.Get<TextBox>("UIuGrid");
+        private TextBox VMin => ParentWindow.Get<TextBox>("UIvMin");
+        private TextBox VMax => ParentWindow.Get<TextBox>("UIvMax");
+        private TextBox VGridSections => ParentWindow.Get<TextBox>("UIuGridSections");
         private Button Save => ParentWindow.Get<Button>("UISaveOptions3d");
         private Button Reset => ParentWindow.Get<Button>("UIResetOptions3d");
         #endregion
 
         #region Public Properties
-        public bool uMinAccessible => uMin.Visible && uMin.Enabled;
-        public bool uMaxAccessible => uMax.Visible && uMax.Enabled;
-        public bool uGridSectionsAccessible => uGridSections.Visible && uGridSections.Enabled;
-        public bool vMinAccessible => vMin.Visible && vMin.Enabled;
-        public bool vMaxAccessible => vMax.Visible && vMax.Enabled;
-        public bool vGridSectionsAccessible => vGridSections.Visible && vGridSections.Enabled;
+        public bool UMinAccessible => UMin.Visible && UMin.Enabled;
+        public bool UMaxAccessible => UMax.Visible && UMax.Enabled;
+        public bool UGridSectionsAccessible => UGridSections.Visible && UGridSections.Enabled;
+        public bool VMinAccessible => VMin.Visible && VMin.Enabled;
+        public bool VMaxAccessible => VMax.Visible && VMax.Enabled;
+        public bool VGridSectionsAccessible => VGridSections.Visible && VGridSections.Enabled;
         public bool SaveAccessible => Save.Visible && Save.Enabled;
         public bool ResetAccessible => Reset.Visible && Reset.Enabled;
-        public string CountOfUGridSections => uGridSections.Text;
+        public string CountOfUGridSections => UGridSections.Text;
 
         #endregion
 
@@ -47,7 +48,7 @@ namespace WhitePageModellingPOCGraphingCalc.Models
 
         public ThreeDeeParametricGraphOptionsModel EnteruGridSections(string sections)
         {
-            uGridSections.BulkText = sections.ToString();
+            UGridSections.BulkText = sections.ToString();
             return this;
         }
 

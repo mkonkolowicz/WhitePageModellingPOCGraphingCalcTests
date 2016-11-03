@@ -1,6 +1,8 @@
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.MenuItems;
 using TestStack.White.UIItems.WindowItems;
+using WhitePageModellingPOCGraphingCalc.Models.Graph;
+using WhitePageModellingPOCGraphingCalc.Models.GraphOptions;
 
 namespace WhitePageModellingPOCGraphingCalc.Models
 {

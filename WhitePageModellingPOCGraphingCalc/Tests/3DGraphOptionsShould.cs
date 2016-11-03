@@ -2,6 +2,7 @@
 using System.IO;
 using NUnit.Framework;
 using TestStack.White;
+using TestStack.White.InputDevices;
 using TestStack.White.UIItems.WindowItems;
 using WhitePageModellingPOCGraphingCalc.Models;
 
@@ -36,37 +37,37 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
         [Test]
         public void HaveUMinAvailableForInput()
         {
-            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().uMinAccessible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().UMinAccessible);
         }
 
         [Test]
         public void HaveUMaxAvailableForInput()
         {
-            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().uMaxAccessible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().UMaxAccessible);
         }
 
         [Test]
         public void HaveUGridSectionsAvailableForInput()
         {
-            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().uGridSectionsAccessible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().UGridSectionsAccessible);
         }
 
         [Test]
         public void HaveVMinAvailableForInput()
         {
-            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().vMinAccessible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().VMinAccessible);
         }
 
         [Test]
         public void HaveVMaxAvailableForInput()
         {
-            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().vMaxAccessible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().VMaxAccessible);
         }
 
         [Test]
         public void HaveVGridSectionsAvailableForInput()
         {
-            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().vGridSectionsAccessible);
+            Assert.That(_mainWindow.Open3DParametricGraphOptionsMenu().VGridSectionsAccessible);
         }
 
         //First test using save button
@@ -116,12 +117,14 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
             //Arrange
             const string uGridSectionsToModifyTo = "Invalid";
             var threeDeeOptions = _mainWindow.Open3DParametricGraphOptionsMenu();
+            threeDeeOptions.EnteruGridSections("adlfjasklf");
             
             //Act
             var savedSettings = threeDeeOptions.SaveSettings();
             
             //Assert
-            Assert.IsFalse(!savedSettings.FofX3DParametricEnabled());
+            Assert.False(savedSettings.FofX3DParametricAccessible);
+
         }
 
         [TearDown]

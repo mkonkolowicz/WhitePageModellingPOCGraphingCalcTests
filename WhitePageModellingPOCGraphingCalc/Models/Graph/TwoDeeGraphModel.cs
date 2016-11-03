@@ -1,7 +1,7 @@
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
 
-namespace WhitePageModellingPOCGraphingCalc.Models
+namespace WhitePageModellingPOCGraphingCalc.Models.Graph
 {
     public class TwoDeeGraphModel : TestHelper
     {

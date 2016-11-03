@@ -1,7 +1,7 @@
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
 
-namespace WhitePageModellingPOCGraphingCalc.Models
+namespace WhitePageModellingPOCGraphingCalc.Models.Graph
 {
     public class ThreeDeeParametricGraphModel : TestHelper
     {
@@ -18,31 +18,16 @@ namespace WhitePageModellingPOCGraphingCalc.Models
         private Button SolidMesh => ParentWindow.Get<Button>("UISolidMesh");
         #endregion
 
-        #region Public Methods
-        public bool FofX3DParametricEnabled()
-        {
-            return FofXInput3dParametric.Enabled;
-        }
-        public bool FofY3DParametricEnabled()
-        {
-            return FofYInput3dParametric.Enabled;
-        }
-        public bool SphereEnabled()
-        {
-            return Sphere.Enabled;
-        }
-        public bool ConeEnabled()
-        {
-            return Cone.Enabled;
-        }
-        public bool TorusEnabled()
-        {
-            return Torus.Enabled;
-        }
-        public bool SolidMeshEnabled()
-        {
-            return SolidMesh.Enabled;
-        }
+        #region Public Properties
+        public bool FofX3DParametricAccessible => FofXInput3dParametric.Visible && FofXInput3dParametric.Enabled;
+        public bool FofX3DParametricEnabled => FofXInput3dParametric.Enabled;
+        public bool FofY3DParametricEnabled => FofYInput3dParametric.Enabled;
+        
+        public bool SphereEnabled => Sphere.Enabled;
+        public bool ConeEnabled => Cone.Enabled;
+        
+        public bool TorusEnabled => Torus.Enabled;
+        public bool SolidMeshEnabled => SolidMesh.Enabled;
         #endregion
 
     }
