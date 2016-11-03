@@ -56,6 +56,11 @@ namespace WhitePageModellingPOCGraphingCalc.Models
             GraphOptionsMenu.ChildMenus.Find(x => x.Id == "UIShowOptions3D").Click();
             return new ThreeDeeParametricGraphOptionsModel(ParentWindow);
         }
+
+        public void ModifyGridSections(int number)
+        {
+        }
+
         #endregion
 
     }

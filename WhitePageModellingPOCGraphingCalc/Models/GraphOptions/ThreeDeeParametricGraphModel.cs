@@ -27,6 +27,9 @@ namespace WhitePageModellingPOCGraphingCalc.Models
         public bool vMinAccessible => vMin.Visible && vMin.Enabled;
         public bool vMaxAccessible => vMax.Visible && vMax.Enabled;
         public bool vGridSectionsAccessible => vGridSections.Visible && vGridSections.Enabled;
+        public bool SaveAccessible => Save.Visible && Save.Enabled;
+        public bool ResetAccessible => Reset.Visible && Reset.Enabled;
+        public string CountOfUGridSections => uGridSections.Text;
 
         #endregion
 
@@ -36,11 +39,18 @@ namespace WhitePageModellingPOCGraphingCalc.Models
             Save.Click();
             return new ThreeDeeParametricGraphModel(ParentWindow);
         }
-        public ThreeDeeParametricGraphModel ResetSettings()
+        public ThreeDeeParametricGraphOptionsModel ResetSettings()
         {
-            Save.Click();
-            return new ThreeDeeParametricGraphModel(ParentWindow);
+            Reset.Click();
+            return this;
         }
+
+        public ThreeDeeParametricGraphOptionsModel EnteruGridSections(string sections)
+        {
+            uGridSections.BulkText = sections.ToString();
+            return this;
+        }
+
         #endregion
 
     }
