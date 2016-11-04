@@ -1,33 +1,26 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using NUnit.Framework;
 using TestStack.White;
-using TestStack.White.InputDevices;
 using TestStack.White.UIItems.WindowItems;
-using TestStack.White.WindowsAPI;
 using WhitePageModellingPOCGraphingCalc.Models;
 
 namespace WhitePageModellingPOCGraphingCalc.Tests
 {
     [TestFixture]
+    //Mostly UI testing examples, but some good examples of how model useage saves time in dev and what not to do :) Examples of Arrange Act Assert pattern, and failure messages. 
     public class ThreeDeeParametricGraphOptionsShould
     {
         private const string LocalPathToTestApp = "C:\\Github\\WhitePageModellingPOCGraphingCalcTests\\GraphingCalculatorDemo\\bin\\Debug\\";
-        private static string cwd = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        private static string projectName = "GraphingCalculatorForWhitePOC"; 
-        string solutionPath = cwd.Replace(projectName + "\\bin\\Debug", "");
-        private static readonly string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-        private static Window AppWindow;
-        private Application app;
+        private static Window _appWindow;
+        private Application _app;
         private MainWindowModel _mainWindow;
-
+        
         [SetUp]
         public void LaunchApp()
         {
-            app = Application.Launch(LocalPathToTestApp + "GraphingCalculatorForWhitePOC.exe");
-            AppWindow= app.GetWindow("MainWindow");
-            _mainWindow = new MainWindowModel(AppWindow);
+            _app = Application.Launch(LocalPathToTestApp + "GraphingCalculatorForWhitePOC.exe");
+            _appWindow= _app.GetWindow("MainWindow");
+            _mainWindow = new MainWindowModel(_appWindow);
         }
 
         [Test]
@@ -107,33 +100,33 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
             
             //Act
             var resetSettings = modifiedSettings.ResetSettings();
-            
+            var resetCountOfGridSections = resetSettings.CountOfUGridSections;
+
             //Assert
-            Assert.That(string.CompareOrdinal(resetSettings.CountOfUGridSections, originalUGridSections)==0);
+            Assert.That(string.CompareOrdinal(resetCountOfGridSections, originalUGridSections)==0,$"The UGridSections text value was expected to be {originalUGridSections}, but was actually {resetCountOfGridSections} after hitting the reset button");
         }
 
-        //fourth test using save button
+        //Fourth test using save button
         [Test]
         public void NotAllowForInputWhenInvalidSaveCriteria()
         {
             //Arrange
-            const string uGridSectionsToModifyTo = "Invalid";
             var threeDeeOptions = _mainWindow.Open3DParametricGraphOptionsMenu();
-            threeDeeOptions.EnteruGridSections("adlfjasklf");
+            threeDeeOptions.EnteruGridSections("TestInput");
             
             //Act
             var savedSettings = threeDeeOptions.SaveSettings();
             
             //Assert
-            Assert.False(savedSettings.FofX3DParametricAccessible);
+            Assert.False(savedSettings.FofX3DParametricAccessible,"FofX3dParametric control is available for input, which means the modal alert that is supposed to block input has not been shown.");
             //app.kill is sent for this test only since there is a modal window which we can't get a hold of.
-            app.Kill();
+            _app.Kill();
         }
 
         [TearDown]
         public void TearDown()
         {
-            AppWindow.Close();
+            _appWindow.Close();
         }
     }
 }

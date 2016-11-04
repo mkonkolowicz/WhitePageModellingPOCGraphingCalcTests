@@ -1,5 +1,4 @@
-﻿using System.IO;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TestStack.White;
 using TestStack.White.UIItems.WindowItems;
 using WhitePageModellingPOCGraphingCalc.Models;
@@ -7,23 +6,20 @@ using WhitePageModellingPOCGraphingCalc.Models;
 namespace WhitePageModellingPOCGraphingCalc.Tests
 {
     [TestFixture]
+    //Examples of basic UI tests.
     public class MainWindowShould
     {
         private const string LocalPathToTestApp = "C:\\Github\\WhitePageModellingPOCGraphingCalcTests\\GraphingCalculatorDemo\\bin\\Debug\\";
-        private static string cwd = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        private static string projectName = "GraphingCalculatorForWhitePOC";  //YOUR PROJECT NAME HERE
-        string solutionPath = cwd.Replace(projectName + "\\bin\\Debug", "");
-        private static readonly string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-        private static Window AppWindow;
-        private Application app;
+        private static Window _appWindow;
+        private Application _app;
         private MainWindowModel _mainWindow;
 
         [SetUp]
         public void LaunchApp()
         {
-            app = Application.Launch(LocalPathToTestApp + "GraphingCalculatorForWhitePOC.exe");
-            AppWindow= app.GetWindow("MainWindow");
-            _mainWindow = new MainWindowModel(AppWindow);
+            _app = Application.Launch(LocalPathToTestApp + "GraphingCalculatorForWhitePOC.exe");
+            _appWindow= _app.GetWindow("MainWindow");
+            _mainWindow = new MainWindowModel(_appWindow);
         }
 
         [Test]
@@ -51,7 +47,7 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
         [Test]
         public void NotNavigateAwayFromMainAreaWhenNoneIsSelected()
         {
-            Assert.That(_mainWindow.OpenNoneGraphMenu().ShowMainCalculatorInputArea);
+            Assert.That(_mainWindow.OpenNoneGraphMenu().ShowMainCalculatorInputArea,"Main calculator input area not shown if none option is selected and it should be");
         }
         [Test]
         public void NavigateToParametric2DGraphArea()
@@ -68,7 +64,7 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
         [TearDown]
         public void TearDown()
         {
-            AppWindow.Close();
+            _appWindow.Close();
         }
     }
 }
