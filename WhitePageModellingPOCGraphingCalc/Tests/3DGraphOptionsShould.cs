@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using NUnit.Framework;
 using TestStack.White;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems.WindowItems;
+using TestStack.White.WindowsAPI;
 using WhitePageModellingPOCGraphingCalc.Models;
 
 namespace WhitePageModellingPOCGraphingCalc.Tests
@@ -124,7 +126,8 @@ namespace WhitePageModellingPOCGraphingCalc.Tests
             
             //Assert
             Assert.False(savedSettings.FofX3DParametricAccessible);
-
+            //app.kill is sent for this test only since there is a modal window which we can't get a hold of.
+            app.Kill();
         }
 
         [TearDown]
